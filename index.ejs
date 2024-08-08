@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PicShare Gallery</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <h1>PicShare Gallery</h1>
+    <a href="/upload">Upload a New Image</a>
+    <div class="gallery">
+        <% photos.forEach(photo => { %>
+            <div class="photo">
+                <img src="<%= photo.imageUrl %>" alt="<%= photo.title %>">
+                <h2><%= photo.title %></h2>
+                <p><%= photo.description %></p>
+            </div>
+        <% }) %>
+        <!-- <% photos.forEach(photo => { %>
+            <div class="photo">
+                <img src="<%= photo.imageUrl %>" alt="<%= photo.title %>">
+                <h3><%= photo.title %></h3>
+                <p><%= photo.description %></p>
+                <form action="/delete/<%= photo._id %>" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        <% }) %> -->
+        
+
+    </div>
+</body>
+</html>
